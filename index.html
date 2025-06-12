@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Gibberdle</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Gibberdle</h1>
+            <h2>Wordle for Illiterate People</h2>
+            <h2 id = "alphabet"></h2>
+            <img id = "photo" style="width: 200px; height: 100 px">
+        </div>
+        <p></p>
+        <div>
+        </div>
+            <div class="section myClass1">
+                <input id = "input" class = "gray" style="text-transform: uppercase;" maxlength="1">
+                <input id = "input2" class = "gray" style="text-transform: uppercase;" maxlength="1">
+                <input id = "input3" class = "gray" style="text-transform: uppercase;" maxlength="1">
+                <input id = "input4" class = "gray" style="text-transform: uppercase;" maxlength="1">
+                <input id = "input5" class = "gray" style="text-transform: uppercase;" maxlength="1">
+                <p id = "feedback2"></p>
+                <p id = "clicks"></p>
+            </div>
+
+            <div class="section 2">
+                <input id = "input21" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input22" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input23" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input24" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input25" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+            </div>
+
+            <p></p>
+
+            <div class="section 3">
+                <input id = "input31" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input32" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input33" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input34" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input35" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+            </div>
+
+            <p></p>
+
+            <div class="section 4">
+                <input id = "input41" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input42" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input43" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input44" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input45" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+            </div>
+
+            <p></p>
+
+            <div class="section 5">
+                <input id = "input51" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input52" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input53" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input54" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input55" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+            </div>
+
+            <p></p>
+
+            <div class="section 6">
+                <input id = "input61" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input62" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input63" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input64" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+                <input id = "input65" class = "gray" style="text-transform: uppercase;" maxlength="1" disabled = true>
+            </div>
+                <p id = "letter1"></p>
+                <p id = "letter2"></p>
+                <p id = "letter3"></p>
+                <p id = "letter4"></p>
+                <p id = "letter5"></p>
+                <p id = "word"></p>
+            <div>
+
+            </div>
+        </div>
+    </body>
+    <script>
+
+        alphabet = []
+        useralpha = []
+        correctword = []
+        wrong = []
+        alpha = []
+        for (let i = 65; i < 91; i++) {
+            alphabet.push(String.fromCharCode(i))
+            useralpha.push(String.fromCharCode(i))
+            alpha.push(String.fromCharCode(i))
+        }
+
+        letter1 = alphabet[Math.floor(Math.random() * alphabet.length)]
+        index1 = alphabet.indexOf(letter1)
+        alphabet.splice(index1, 1)
+        //document.getElementById("letter1").innerHTML = letter1
+        correctword.push(letter1)
+        document.getElementById("alphabet").innerHTML = useralpha.join(" ");
+
+        letter2 = alphabet[Math.floor(Math.random() * alphabet.length)]
+        index2 = alphabet.indexOf(letter2)
+        alphabet.splice(index2, 1)
+        //document.getElementById("letter2").innerHTML = letter2
+        correctword.push(letter2)
+
+        letter3 = alphabet[Math.floor(Math.random() * alphabet.length)]
+        index3 = alphabet.indexOf(letter3)
+        alphabet.splice(index3, 1)
+        //document.getElementById("letter3").innerHTML = letter3
+        correctword.push(letter3)
+
+        letter4 = alphabet[Math.floor(Math.random() * alphabet.length)]
+        index4 = alphabet.indexOf(letter4)
+        alphabet.splice(index4, 1)
+        //document.getElementById("letter4").innerHTML = letter4
+        correctword.push(letter4)
+
+        letter5= alphabet[Math.floor(Math.random() * alphabet.length)]
+        index5 = alphabet.indexOf(letter5)
+        alphabet.splice(index5, 1)
+        //document.getElementById("letter5").innerHTML = letter5
+        correctword.push(letter5)
+
+        document.getElementById("word").innerHTML = correctword
+
+        const inputfield1 = document.getElementById("input")
+        const inputfield2 = document.getElementById("input2")
+        const inputfield3 = document.getElementById("input3")
+        const inputfield4 = document.getElementById("input4")
+        const inputfield5 = document.getElementById("input5")
+
+
+        inputs = ["input", "input2", "input3", "input4", "input5", "input21", "input22", "input23", "input24", "input25", "input31", "input32", "input33", "input34", "input35", "input41", "input42", "input43", "input44", "input45", "input51", "input52", "input53", "input54", "input55", "input61", "input62", "input63", "input64", "input65"]
+
+        limit = 5
+
+        document.addEventListener('input', function(event) {
+            const inputId = event.target.id;
+            indextest = inputs.indexOf(inputId)
+            if (event.target.value != "") {
+                document.getElementById(inputs[indextest + 1]).focus();
+            }
+            if (!alpha.includes(event.target.value.toUpperCase())){
+                event.target.value = ""
+                document.getElementById(inputs[indextest + 0]).focus();
+            }
+            if (document.querySelectorAll('input.myClass1').id !== event.target.id){
+                if (document.querySelectorAll('input.myClass1').value == event.target.value){
+                    event.target.value = ""
+                    document.getElementById(inputs[indextest + 0]).focus();
+                    }
+                }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            const inputId = event.target.id;
+            indextest = inputs.indexOf(inputId)
+            if (event.key == "Backspace"){
+                if (event.target.value == ""){
+                    document.getElementById(inputs[indextest - 1]).focus();
+                }
+            }
+        })
+
+        let clickcount = 0
+        document.addEventListener('keydown', function(event) {
+            if (event.key == "Enter"){
+
+                clickcount++
+                if (clickcount == 1) {
+                    document.getElementById("input21").focus();
+                    for (let i = 0; i < 5; i++){
+                        if (document.getElementById(inputs[i]).value == ""){
+                            clickcount = clickcount - 1
+                            return
+                        }
+                    }
+                    for (let i = 0; i < 5; i++){
+                        document.getElementById(inputs[i]).disabled = true;
+                        document.getElementById(inputs[i + 5]).disabled = false;
+                    }
+                    for (let i = 0; i < 5; i++){
+                        if (useralpha.includes(document.getElementById(inputs[i]).value.toUpperCase())){
+                            index = useralpha.indexOf(document.getElementById(inputs[i]).value.toUpperCase())
+                            useralpha.splice(index, 1)
+                            document.getElementById("alphabet").innerHTML = useralpha.join(" ")
+                        }
+                    }
+                    if (input.value.toUpperCase() == letter1) {
+                        document.getElementById("input").style.backgroundColor = "green";
+                    } else if (input.value.toUpperCase() != letter1 && correctword.includes(input.value.toUpperCase())) {
+                        document.getElementById("input").style.backgroundColor = "yellow";
+                    } else{
+                        document.getElementById("input").style.backgroundColor = "gray";
+                    }
+
+                    if (input2.value.toUpperCase() == letter2) {
+                        document.getElementById("input2").style.backgroundColor = "green";
+                    } else if (input2.value.toUpperCase() != letter2 && correctword.includes(input2.value.toUpperCase())) {
+                        document.getElementById("input2").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input2").style.backgroundColor = "gray";
+                    }
+                    if (input3.value.toUpperCase() == letter3) {
+                        document.getElementById("input3").style.backgroundColor = "green";
+                    } else if (input3.value.toUpperCase() != letter3 && correctword.includes(input3.value.toUpperCase())) {
+                        document.getElementById("input3").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input3").style.backgroundColor = "gray";
+                    }
+                    if (input4.value.toUpperCase() == letter4) {
+                        document.getElementById("input4").style.backgroundColor = "green";
+                    } else if (input4.value.toUpperCase() != letter4 && correctword.includes(input4.value.toUpperCase())) {
+                        document.getElementById("input4").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input4").style.backgroundColor = "gray";
+                    }
+                    if (input5.value.toUpperCase() == letter5) {
+                        document.getElementById("input5").style.backgroundColor = "green";
+                    } else if (input5.value.toUpperCase() != letter5 && correctword.includes(input5.value.toUpperCase())) {
+                        document.getElementById("input5").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input5").style.backgroundColor = "gray";
+                    }
+
+                    if (input.value.toUpperCase() == letter1 && input2.value.toUpperCase() == letter2 && input3.value.toUpperCase() == letter3 && input4.value.toUpperCase() == letter4 && input5.value.toUpperCase() == letter5){
+                        document.getElementById("photo").src = "ElanHooray.jpeg";
+                    }
+                document.getElementById("input21").focus();
+                }
+
+                if (clickcount == 2) {
+                    for (let i = 5; i < 10; i++){
+                        if (document.getElementById(inputs[i]).value == ""){
+                            clickcount = clickcount - 1
+                            return
+                        }
+                    }
+                    for (let i = 5; i < 10; i++){
+                        document.getElementById(inputs[i]).disabled = true;
+                        document.getElementById(inputs[i + 5]).disabled = false;
+                    }
+                    for (let i = 5; i < 10; i++){
+                        if (useralpha.includes(document.getElementById(inputs[i]).value.toUpperCase())){
+                            index = useralpha.indexOf(document.getElementById(inputs[i]).value.toUpperCase())
+                            useralpha.splice(index, 1)
+                            document.getElementById("alphabet").innerHTML = useralpha.join(" ")
+                            }
+                    }
+                    if (input21.value.toUpperCase() == letter1) {
+                        document.getElementById("input21").style.backgroundColor = "green";
+                    } else if (input21.value.toUpperCase() != letter1 && correctword.includes(input21.value.toUpperCase())) {
+                        document.getElementById("input21").style.backgroundColor = "yellow";
+                    } else{
+                        document.getElementById("input21").style.backgroundColor = "gray";
+                    }
+
+                    if (input22.value.toUpperCase() == letter2) {
+                        document.getElementById("input22").style.backgroundColor = "green";
+                    } else if (input22.value.toUpperCase() != letter2 && correctword.includes(input22.value.toUpperCase())) {
+                        document.getElementById("input22").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input22").style.backgroundColor = "gray";
+                    }
+                    if (input23.value.toUpperCase() == letter3) {
+                        document.getElementById("input23").style.backgroundColor = "green";
+                    } else if (input23.value.toUpperCase() != letter3 && correctword.includes(input23.value.toUpperCase())) {
+                        document.getElementById("input23").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input23").style.backgroundColor = "gray";
+                    }
+                    if (input24.value.toUpperCase() == letter4) {
+                        document.getElementById("input24").style.backgroundColor = "green";
+                    } else if (input24.value.toUpperCase() != letter4 && correctword.includes(input24.value.toUpperCase())) {
+                        document.getElementById("input24").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input24").style.backgroundColor = "gray";
+                    }
+                    if (input25.value.toUpperCase() == letter5) {
+                        document.getElementById("input25").style.backgroundColor = "green";
+                    } else if (input25.value.toUpperCase() != letter5 && correctword.includes(input25.value.toUpperCase())) {
+                        document.getElementById("input25").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input25").style.backgroundColor = "gray";
+                    }
+
+                    if (input21.value.toUpperCase() == letter1 && input22.value.toUpperCase() == letter2 && input23.value.toUpperCase() == letter3 && input24.value.toUpperCase() == letter4 && input25.value.toUpperCase() == letter5){
+                        document.getElementById("photo").src = "ElanHooray.jpeg";
+                    }
+                document.getElementById("input31").focus();
+                }
+
+                if (clickcount == 3) {
+                    for (let i = 10; i < 15; i++){
+                        if (document.getElementById(inputs[i]).value == ""){
+                            clickcount = clickcount - 1
+                            return
+                        }
+                    }
+                    for (let i = 10; i < 15; i++){
+                        document.getElementById(inputs[i]).disabled = true;
+                        document.getElementById(inputs[i + 5]).disabled = false;
+                    }
+                    for (let i = 10; i < 15; i++){
+                        if (useralpha.includes(document.getElementById(inputs[i]).value.toUpperCase())){
+                            index = useralpha.indexOf(document.getElementById(inputs[i]).value.toUpperCase())
+                            useralpha.splice(index, 1)
+                            document.getElementById("alphabet").innerHTML = useralpha.join(" ")
+                        }
+                    }
+                    if (input31.value.toUpperCase() == letter1) {
+                        document.getElementById("input31").style.backgroundColor = "green";
+                    } else if (input31.value.toUpperCase() != letter1 && correctword.includes(input31.value.toUpperCase())) {
+                        document.getElementById("input31").style.backgroundColor = "yellow";
+                    } else{
+                        document.getElementById("input31").style.backgroundColor = "gray";
+                    }
+
+                    if (input32.value.toUpperCase() == letter2) {
+                        document.getElementById("input32").style.backgroundColor = "green";
+                    } else if (input32.value.toUpperCase() != letter2 && correctword.includes(input32.value.toUpperCase())) {
+                        document.getElementById("input32").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input32").style.backgroundColor = "gray";
+                    }
+                    if (input33.value.toUpperCase() == letter3) {
+                        document.getElementById("input33").style.backgroundColor = "green";
+                    } else if (input33.value.toUpperCase() != letter3 && correctword.includes(input33.value.toUpperCase())) {
+                        document.getElementById("input33").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input33").style.backgroundColor = "gray";
+                    }
+                    if (input34.value.toUpperCase() == letter4) {
+                        document.getElementById("input34").style.backgroundColor = "green";
+                    } else if (input24.value.toUpperCase() != letter4 && correctword.includes(input34.value.toUpperCase())) {
+                        document.getElementById("input34").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input34").style.backgroundColor = "gray";
+                    }
+                    if (input35.value.toUpperCase() == letter5) {
+                        document.getElementById("input35").style.backgroundColor = "green";
+                    } else if (input25.value.toUpperCase() != letter5 && correctword.includes(input35.value.toUpperCase())) {
+                        document.getElementById("input35").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input35").style.backgroundColor = "gray";
+                    }
+
+                    if (input31.value.toUpperCase() == letter1 && input32.value.toUpperCase() == letter2 && input33.value.toUpperCase() == letter3 && input34.value.toUpperCase() == letter && input35.value.toUpperCase() == letter5){
+                        document.getElementById("photo").src = "ElanHooray.jpeg";
+                    }
+                document.getElementById("input41").focus();
+                }
+
+                if (clickcount == 4) {
+                    for (let i = 15; i < 20; i++){
+                        if (document.getElementById(inputs[i]).value == ""){
+                            clickcount = clickcount - 1
+                            return
+                        }
+                    }
+                    for (let i = 15; i < 20; i++){
+                        document.getElementById(inputs[i]).disabled = true;
+                        document.getElementById(inputs[i + 5]).disabled = false;
+                    }
+                    for (let i = 15; i < 20; i++){
+                        if (useralpha.includes(document.getElementById(inputs[i]).value.toUpperCase())){
+                            index = useralpha.indexOf(document.getElementById(inputs[i]).value.toUpperCase())
+                            useralpha.splice(index, 1)
+                            document.getElementById("alphabet").innerHTML = useralpha.join(" ")
+                        }
+                    }
+                    if (input41.value.toUpperCase() == letter1) {
+                        document.getElementById("input41").style.backgroundColor = "green";
+                    } else if (input21.value.toUpperCase() != letter1 && correctword.includes(input41.value.toUpperCase())) {
+                        document.getElementById("input41").style.backgroundColor = "yellow";
+                    } else{
+                        document.getElementById("input41").style.backgroundColor = "gray";
+                    }
+
+                    if (input42.value.toUpperCase() == letter2) {
+                        document.getElementById("input42").style.backgroundColor = "green";
+                    } else if (input42.value.toUpperCase() != letter2 && correctword.includes(input42.value.toUpperCase())) {
+                        document.getElementById("input42").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input42").style.backgroundColor = "gray";
+                    }
+                    if (input43.value.toUpperCase() == letter3) {
+                        document.getElementById("input43").style.backgroundColor = "green";
+                    } else if (input43.value.toUpperCase() != letter3 && correctword.includes(input43.value.toUpperCase())) {
+                        document.getElementById("input43").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input43").style.backgroundColor = "gray";
+                    }
+                    if (input44.value.toUpperCase() == letter4) {
+                        document.getElementById("input44").style.backgroundColor = "green";
+                    } else if (input44.value.toUpperCase() != letter4 && correctword.includes(input44.value.toUpperCase())) {
+                        document.getElementById("input44").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input44").style.backgroundColor = "gray";
+                    }
+                    if (input45.value.toUpperCase() == letter5) {
+                        document.getElementById("input45").style.backgroundColor = "green";
+                    } else if (input45.value.toUpperCase() != letter5 && correctword.includes(input45.value.toUpperCase())) {
+                        document.getElementById("input45").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input45").style.backgroundColor = "gray";
+                    }
+
+                    if (input41.value.toUpperCase() == letter1 && input42.value.toUpperCase() == letter2 && input43.value.toUpperCase() == letter3 && input44.value.toUpperCase() == letter4 && input45.value.toUpperCase() == letter5){
+                        document.getElementById("photo").src = "ElanHooray.jpeg";
+                    }
+                document.getElementById("input51").focus();
+                }
+
+                if (clickcount == 5) {
+                    for (let i = 20; i < 25; i++){
+                        if (document.getElementById(inputs[i]).value == ""){
+                            clickcount = clickcount - 1
+                            return
+                        }
+                    }
+                    for (let i = 20; i < 25; i++){
+                        document.getElementById(inputs[i]).disabled = true;
+                        document.getElementById(inputs[i + 5]).disabled = false;
+                    }
+                    for (let i = 20; i < 25; i++){
+                        if (useralpha.includes(document.getElementById(inputs[i]).value.toUpperCase())){
+                            index = useralpha.indexOf(document.getElementById(inputs[i]).value.toUpperCase())
+                            useralpha.splice(index, 1)
+                            document.getElementById("alphabet").innerHTML = useralpha.join(" ")
+                        }
+                    }
+                    if (input51.value.toUpperCase() == letter1) {
+                        document.getElementById("input51").style.backgroundColor = "green";
+                    } else if (input51.value.toUpperCase() != letter1 && correctword.includes(input51.value.toUpperCase())) {
+                        document.getElementById("input51").style.backgroundColor = "yellow";
+                    } else{
+                        document.getElementById("input51").style.backgroundColor = "gray";
+                    }
+
+                    if (input52.value.toUpperCase() == letter2) {
+                        document.getElementById("input52").style.backgroundColor = "green";
+                    } else if (input52.value.toUpperCase() != letter2 && correctword.includes(input52.value.toUpperCase())) {
+                        document.getElementById("input52").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input52").style.backgroundColor = "gray";
+                    }
+                    if (input53.value.toUpperCase() == letter3) {
+                        document.getElementById("input53").style.backgroundColor = "green";
+                    } else if (input53.value.toUpperCase() != letter3 && correctword.includes(input53.value.toUpperCase())) {
+                        document.getElementById("input53").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input53").style.backgroundColor = "gray";
+                    }
+                    if (input54.value.toUpperCase() == letter4) {
+                        document.getElementById("input54").style.backgroundColor = "green";
+                    } else if (input54.value.toUpperCase() != letter4 && correctword.includes(input54.value.toUpperCase())) {
+                        document.getElementById("input54").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input54").style.backgroundColor = "gray";
+                    }
+                    if (input55.value.toUpperCase() == letter5) {
+                        document.getElementById("input55").style.backgroundColor = "green";
+                    } else if (input55.value.toUpperCase() != letter5 && correctword.includes(input55.value.toUpperCase())) {
+                        document.getElementById("input55").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input55").style.backgroundColor = "gray";
+                    }
+
+                    if (input51.value.toUpperCase() == letter1 && input52.value.toUpperCase() == letter2 && input53.value.toUpperCase() == letter3 && input54.value.toUpperCase() == letter4 && input55.value.toUpperCase() == letter5){
+                        document.getElementById("photo").src = "ElanHooray.jpeg";
+                    }
+                document.getElementById("input61").focus();
+                }
+
+                if (clickcount == 6) {
+                    for (let i = 25; i < 30; i++){
+                        if (document.getElementById(inputs[i]).value == ""){
+                            clickcount = clickcount - 1
+                            return
+                        }
+                    }
+                    for (let i = 25; i < 30; i++){
+                        document.getElementById(inputs[i]).disabled = true;
+
+                    }
+                    for (let i = 25; i < 30; i++){
+                        if (useralpha.includes(document.getElementById(inputs[i]).value.toUpperCase())){
+                            index = useralpha.indexOf(document.getElementById(inputs[i]).value.toUpperCase())
+                            useralpha.splice(index, 1)
+                            document.getElementById("alphabet").innerHTML = useralpha.join(" ")
+                        }
+                    }
+                    if (input61.value.toUpperCase() == letter1) {
+                        document.getElementById("input61").style.backgroundColor = "green";
+                    } else if (input61.value.toUpperCase() != letter1 && correctword.includes(input61.value.toUpperCase())) {
+                        document.getElementById("input61").style.backgroundColor = "yellow";
+                    } else{
+                        document.getElementById("input61").style.backgroundColor = "gray";
+                    }
+
+                    if (input62.value.toUpperCase() == letter2) {
+                        document.getElementById("input62").style.backgroundColor = "green";
+                    } else if (input52.value.toUpperCase() != letter2 && correctword.includes(input62.value.toUpperCase())) {
+                        document.getElementById("input62").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input62").style.backgroundColor = "gray";
+                    }
+                    if (input63.value.toUpperCase() == letter3) {
+                        document.getElementById("input63").style.backgroundColor = "green";
+                    } else if (input63.value.toUpperCase() != letter3 && correctword.includes(input63.value.toUpperCase())) {
+                        document.getElementById("input63").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input63").style.backgroundColor = "gray";
+                    }
+                    if (input64.value.toUpperCase() == letter4) {
+                        document.getElementById("input64").style.backgroundColor = "green";
+                    } else if (input64.value.toUpperCase() != letter4 && correctword.includes(input64.value.toUpperCase())) {
+                        document.getElementById("input64").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input64").style.backgroundColor = "gray";
+                    }
+                    if (input65.value.toUpperCase() == letter5) {
+                        document.getElementById("input65").style.backgroundColor = "green";
+                    } else if (input65.value.toUpperCase() != letter5 && correctword.includes(input65.value.toUpperCase())) {
+                        document.getElementById("input65").style.backgroundColor = "yellow";
+                    } else {
+                        document.getElementById("input65").style.backgroundColor = "gray";
+                    }
+
+                    if (input61.value.toUpperCase() == letter1 && input62.value.toUpperCase() == letter2 && input63.value.toUpperCase() == letter3 && input64.value.toUpperCase() == letter4 && input65.value.toUpperCase() == letter5){
+                        document.getElementById("photo").src = "ElanHooray.jpeg";
+                    }
+                }
+            }
+
+
+        })
+
+
+    </script>
+</html>
