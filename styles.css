@@ -1,0 +1,20 @@
+.button {
+    color: "red";
+}
+.box {
+border: 2px solid black; /* Creates a black border around the text */
+padding: 10px; /* Adds space between the text and the border */
+}
+.gray {
+background-color: gray;
+width: 100px;
+height: 100px;
+text-align: center;
+font-size: 50px;
+}
+.header {
+text-align: center;
+}
+.section {
+text-align: center;
+}
