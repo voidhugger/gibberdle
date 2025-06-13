@@ -7,10 +7,10 @@ padding: 10px; /* Adds space between the text and the border */
 }
 .gray {
 background-color: gray;
-width: 100px;
-height: 100px;
+width: 100 px;
+height: 100 px;
 text-align: center;
-font-size: 50px;
+font-size: 50 px;
 }
 .header {
 text-align: center;
