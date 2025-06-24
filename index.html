@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -13,7 +12,7 @@
     <body>
         <div class="header">
             <img id = "photo" src = "gibberdlelogowebsite.png" width = "500" height = "150">
-            <h2 id = "alphabet"></h2>
+            <h3></h3>
         </div>
         <p></p>
         <div>
@@ -82,6 +81,7 @@
                 <p id = "letter5"></p>
                 <p id = "word"></p>
             <div>
+                <h2 id = "alphabet"></h2> 
 
             </div>
         </div>
@@ -102,27 +102,32 @@
         letter1 = alphabet[Math.floor(Math.random() * alphabet.length)]
         index1 = alphabet.indexOf(letter1)
         alphabet.splice(index1, 1)
+        //document.getElementById("letter1").innerHTML = letter1
         correctword.push(letter1)
         document.getElementById("alphabet").innerHTML = useralpha.join(" ");
 
         letter2 = alphabet[Math.floor(Math.random() * alphabet.length)]
         index2 = alphabet.indexOf(letter2)
         alphabet.splice(index2, 1)
+        //document.getElementById("letter2").innerHTML = letter2
         correctword.push(letter2)
 
         letter3 = alphabet[Math.floor(Math.random() * alphabet.length)]
         index3 = alphabet.indexOf(letter3)
         alphabet.splice(index3, 1)
+        //document.getElementById("letter3").innerHTML = letter3
         correctword.push(letter3)
 
         letter4 = alphabet[Math.floor(Math.random() * alphabet.length)]
         index4 = alphabet.indexOf(letter4)
         alphabet.splice(index4, 1)
+        //document.getElementById("letter4").innerHTML = letter4
         correctword.push(letter4)
 
         letter5= alphabet[Math.floor(Math.random() * alphabet.length)]
         index5 = alphabet.indexOf(letter5)
         alphabet.splice(index5, 1)
+        //document.getElementById("letter5").innerHTML = letter5
         correctword.push(letter5)
 
         document.getElementById("word").innerHTML = correctword
@@ -134,7 +139,7 @@
         const inputfield5 = document.getElementById("input5")
 
         document.getElementById("input").focus();
-
+        
         inputs = ["input", "input2", "input3", "input4", "input5", "input21", "input22", "input23", "input24", "input25", "input31", "input32", "input33", "input34", "input35", "input41", "input42", "input43", "input44", "input45", "input51", "input52", "input53", "input54", "input55", "input61", "input62", "input63", "input64", "input65"]
 
         limit = 5
@@ -229,9 +234,7 @@
                     }
 
                     if (input.value.toUpperCase() == letter1 && input2.value.toUpperCase() == letter2 && input3.value.toUpperCase() == letter3 && input4.value.toUpperCase() == letter4 && input5.value.toUpperCase() == letter5){
-                        for(let i = 0; i < 30; i++){
-                            document.getElementById(inputs[i]).disabled = true;
-                        }
+                        //document.getElementById("photo").src = "ElanHooray.jpeg";
                     }
                 document.getElementById("input21").focus();
                 }
@@ -292,9 +295,7 @@
                     }
 
                     if (input21.value.toUpperCase() == letter1 && input22.value.toUpperCase() == letter2 && input23.value.toUpperCase() == letter3 && input24.value.toUpperCase() == letter4 && input25.value.toUpperCase() == letter5){
-                        for(let i = 0; i < 30; i++){
-                            document.getElementById(inputs[i]).disabled = true;
-                        }
+                        //document.getElementById("photo").src = "ElanHooray.jpeg";
                     }
                 document.getElementById("input31").focus();
                 }
@@ -354,10 +355,8 @@
                         document.getElementById("input35").style.backgroundColor = "gray";
                     }
 
-                    if (input31.value.toUpperCase() == letter1 && input32.value.toUpperCase() == letter2 && input33.value.toUpperCase() == letter3 && input34.value.toUpperCase() == letter4 && input35.value.toUpperCase() == letter5){
-                        for(let i = 0; i < 30; i++){
-                            document.getElementById(inputs[i]).disabled = true;
-                        }
+                    if (input31.value.toUpperCase() == letter1 && input32.value.toUpperCase() == letter2 && input33.value.toUpperCase() == letter3 && input34.value.toUpperCase() == letter && input35.value.toUpperCase() == letter5){
+                        //document.getElementById("photo").src = "ElanHooray.jpeg";
                     }
                 document.getElementById("input41").focus();
                 }
@@ -418,9 +417,7 @@
                     }
 
                     if (input41.value.toUpperCase() == letter1 && input42.value.toUpperCase() == letter2 && input43.value.toUpperCase() == letter3 && input44.value.toUpperCase() == letter4 && input45.value.toUpperCase() == letter5){
-                        for(let i = 0; i < 30; i++){
-                            document.getElementById(inputs[i]).disabled = true;
-                        }
+                        //document.getElementById("photo").src = "ElanHooray.jpeg";
                     }
                 document.getElementById("input51").focus();
                 }
@@ -481,9 +478,7 @@
                     }
 
                     if (input51.value.toUpperCase() == letter1 && input52.value.toUpperCase() == letter2 && input53.value.toUpperCase() == letter3 && input54.value.toUpperCase() == letter4 && input55.value.toUpperCase() == letter5){
-                        for(let i = 0; i < 30; i++){
-                            document.getElementById(inputs[i]).disabled = true;
-                        }
+                        //document.getElementById("photo").src = "ElanHooray.jpeg";
                     }
                 document.getElementById("input61").focus();
                 }
@@ -542,15 +537,17 @@
                     } else {
                         document.getElementById("input65").style.backgroundColor = "gray";
                     }
-                    
+
                     if (input61.value.toUpperCase() == letter1 && input62.value.toUpperCase() == letter2 && input63.value.toUpperCase() == letter3 && input64.value.toUpperCase() == letter4 && input65.value.toUpperCase() == letter5){
-                        for(let i = 0; i < 30; i++){
-                            document.getElementById(inputs[i]).disabled = true;
-                        }
+                        //document.getElementById("photo").src = "ElanHooray.jpeg";
                     }
                 }
+            }
+
+
         })
 
 
     </script>
 </html>
+
